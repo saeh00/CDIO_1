@@ -9,19 +9,21 @@ public class Game {
         Random rand = new Random();
 
 
+
+
         int min=1;
         int max=6;
 
         int dice_1;
         int dice_2;
 
-        int diceSum;
+        int diceSum = 0;
 
         String player1;
         String player2;
 
-        int player1_point;
-        int player2_point;
+        int player1_point = 0;
+        int player2_point = 0;
 
         int diceRoll_1, diceRoll_2;
 
