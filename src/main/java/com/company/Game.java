@@ -36,5 +36,35 @@ public class Game {
         int player2_points = 0;
         int turn = 0;
 
+        while (gui_Player_1.getBalance() <40 || gui_Player_2.getBalance()) < 40 {
+            String knapString = gui.getUserSelection("Roll the dice", "Roll");
+
+            if(gui_Player_1.getBalance()>=40){
+
+                knapString = gui.getUserString("Congrats " + Player_1 + " you won");
+
+            }
+
+            else if(gui_Player_2.getBalance()>=40){
+
+                knapString = gui.getUserString(" Congrats" + Player_2 + " you won");
+            }
+            else if (knapString == "Roll" && turn == 0 && gui_Player_1.getBalance()< 40){
+
+                diceSum = 0; // Resetting dice sum
+
+
+                diceRoll_1 = rand.nextInt(max) + min; // Rolling dice 1
+                diceRoll_2 = rand.nextInt(max)+ min;  // Rolling dice 2
+            }
+
+
+
+
+
+
+
+        }
+
     }
 }
