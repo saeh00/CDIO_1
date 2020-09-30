@@ -20,6 +20,5 @@ public class Game {
 
         gui.addPlayer(gui_player_1);
         gui.addPlayer(gui_player_2);
-
     }
 }
