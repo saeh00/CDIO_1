@@ -17,11 +17,11 @@ public class Game {
         String Player_2 = gui.getUserString("indtast et navn");
 
         //Add users to board
-        GUI_Player gui_player_1 = new GUI_Player(Player_1);
-        GUI_Player gui_player_2 = new GUI_Player(Player_2);
+        GUI_Player gui_Player_1 = new GUI_Player(Player_1);
+        GUI_Player gui_Player_2 = new GUI_Player(Player_2);
 
-        gui.addPlayer(gui_player_1);
-        gui.addPlayer(gui_player_2);
+        gui.addPlayer(gui_Player_1);
+        gui.addPlayer(gui_Player_2);
 
         //Setting player startpoints
         gui_Player_1.setBalance(0);
@@ -36,20 +36,20 @@ public class Game {
         int player2_points = 0;
         int turn = 0;
 
-        while (gui_Player_1.getBalance() <40 || gui_Player_2.getBalance()) < 40 {
+        while (gui_Player_1.getBalance() < 40 || gui_Player_2.getBalance() < 40) {
             String knapString = gui.getUserSelection("Roll the dice", "Roll");
 
-            if(gui_Player_1.getBalance()>=40){
+            if(gui_Player_1.getBalance() >= 40){
 
                 knapString = gui.getUserString("Congrats " + Player_1 + " you won");
 
             }
 
-            else if(gui_Player_2.getBalance()>=40){
+            else if(gui_Player_2.getBalance() >= 40){
 
-                knapString = gui.getUserString(" Congrats" + Player_2 + " you won");
+                knapString = gui.getUserString("Congrats " + Player_2 + " you won");
             }
-            else if (knapString == "Roll" && turn == 0 && gui_Player_1.getBalance()< 40) {
+            else if (knapString == "Roll" && turn == 0 && gui_Player_1.getBalance() < 40) {
 
                 diceSum = 0; // Resetting dice sum
 
@@ -62,11 +62,11 @@ public class Game {
                 gui.setDice(diceRoll_1, diceRoll_2); //Assigning dice rolls to GUI
 
                 player1_points = player1_points + diceSum; //Calculating player points
-                gui_player_1.setBalance(player1_points); //Assigning player points to GUI
+                gui_Player_1.setBalance(player1_points); //Assigning player points to GUI
 
                 turn = 1;
 
-            } else if (knapString == "Roll" && turn == 1 && gui_player_2.getBalance() < 40) {
+            } else if (knapString == "Roll" && turn == 1 && gui_Player_2.getBalance() < 40) {
                 diceSum = 0; //Reseting dice sum
 
                 diceRoll_1 = rand.nextInt(max)+min; //Rolling dice 1
@@ -77,7 +77,7 @@ public class Game {
                 gui.setDice(diceRoll_1, diceRoll_2); //Assigning dice rolls to GUI
 
                 player2_points = player2_points + diceSum; //Calculating player points
-                gui_player_2.setBalance(player2_points); //Assigning player points GUI
+                gui_Player_2.setBalance(player2_points); //Assigning player points GUI
 
                 turn = 0;
 
