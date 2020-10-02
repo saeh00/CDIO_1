@@ -1,12 +1,9 @@
 package com.company;
 
 import java.util.Random;
-import gui_main.GUI;
 
 public class Test {
     public static void main(String[] args) {
-        GUI gui = new GUI();
-        gui.setDice(3, 4);
         Random rand = new Random();
         int diceRoll_1, diceRoll_2, diceSum;
         int min=1;
